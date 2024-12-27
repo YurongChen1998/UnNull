@@ -14,7 +14,7 @@ from numpy import *
 import scipy.io as sio
 import matplotlib.pyplot as plt
 import torch.nn.functional as F
-from optim_code.model_MSFA import LSD_MSFA
+from optim_code.model_MSFA import UnNull_MSFA
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
        
@@ -63,5 +63,5 @@ def main_MSFA_CAVE(data_name):
 
 
     #------------------------- Training Model -------------------------#
-    recon = LSD_MSFA(meas, Phi, LRHSI, truth_tensor)
-    sio.savemat('{}/LSD.mat'.format(result_dir), {'img':recon.cpu().numpy()})
+    recon = UnNull_MSFA(meas, Phi, LRHSI, truth_tensor)
+    sio.savemat('{}/UnNull.mat'.format(result_dir), {'img':recon.cpu().numpy()})

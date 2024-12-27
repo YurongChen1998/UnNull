@@ -16,7 +16,7 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 
 
-def LSD_MSFA(meas, Phi, LRHSI, truth_tensor):
+def UnNull_MSFA(meas, Phi, LRHSI, truth_tensor):
     torch.backends.cudnn.benchmark = True
     _, _, B = Phi.shape
     iter_num = 500
@@ -68,7 +68,7 @@ def LSD_MSFA(meas, Phi, LRHSI, truth_tensor):
 
 
 
-def LSD_Real_MSFA(meas, Phi, LRHSI, truth_tensor):
+def UnNull_Real_MSFA(meas, Phi, LRHSI, truth_tensor):
     torch.backends.cudnn.benchmark = True
     _, _, B = Phi.shape
     iter_num = 40
