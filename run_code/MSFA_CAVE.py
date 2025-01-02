@@ -35,9 +35,15 @@ def main_MSFA_CAVE(data_name):
     data = sio.loadmat(matfile)
     data_truth = torch.from_numpy(data['Img'] / 255).float().to(device)
     truth_tensor = data_truth.permute(2, 0, 1).unsqueeze(0)
-
-    Phi = torch.from_numpy(data['A']).float().to(device)
-    meas_ = torch.from_numpy(data['y']).float().to(device) / 255
+    
+    if 'A' in data:
+        Phi = torch.from_numpy(data['A']).float().to(device)
+        meas_ = torch.from_numpy(data['y']).float().to(device) / 255
+    else:
+        data_truth = data_truth[:, :, 0:nC]
+        truth_tensor = data_truth.permute(2, 0, 1).unsqueeze(0)
+        Phi = torch.from_numpy(sio.loadmat(dataset_dir + 'CAVE_balloons.mat')['A']).float().to(device)
+        
     meas = torch.sum(data_truth * Phi, 2)
     meas_3d = data_truth * Phi
     LRHSI_new = torch.zeros_like(Phi)
