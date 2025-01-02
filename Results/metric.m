@@ -32,7 +32,10 @@ mean_ergas = (100/1) * sqrt((1/num_band) * ERGAS_index);
     
     
 mean_PSNR=[mean(PSNR_Ours)]
+std_PSNR=[std(PSNR_Ours)]
 mean_SSIM=[mean(SSIM_Ours)]
+std_SSIM=[std(SSIM_Ours)]
 mean_SAM=[mean(SAM_Ours)]
+std_SAM=[std(SAM_our_temp(:))]
 mean_ergas
 
