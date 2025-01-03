@@ -13,8 +13,8 @@ from run_code.MSFA_RealData import main_MSFA_Realdata
 
 
 if __name__ == '__main__':
-    MSFA          = 1          # 1 for MSFA  task
-    Real_exp      = 0          # 1 for Real MSFA exp.
+    MSFA          = 0          # 1 for MSFA  task
+    Real_exp      = 1          # 1 for Real MSFA exp.
     
     
     if MSFA:
@@ -24,6 +24,7 @@ if __name__ == '__main__':
         for file_name in data_list:
             main_MSFA_CAVE(file_name)
     elif Real_exp:
-        data_list = ['real_data_25']
+        # 'real_data_25', 'real_data_16_S1', 'real_data_16_S2'
+        data_list = ['real_data_16_S2'] 
         for file_name in data_list:
             main_MSFA_Realdata(file_name)

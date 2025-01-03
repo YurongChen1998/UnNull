@@ -71,7 +71,7 @@ def UnNull_MSFA(meas, Phi, LRHSI, truth_tensor):
 def UnNull_Real_MSFA(meas, Phi, LRHSI, truth_tensor):
     torch.backends.cudnn.benchmark = True
     _, _, B = Phi.shape
-    iter_num = 40
+    iter_num = 25
     best_loss = float('inf')
     loss_l1 = torch.nn.L1Loss().to(device)
     loss_l2 = torch.nn.MSELoss().to(device)
@@ -79,7 +79,15 @@ def UnNull_Real_MSFA(meas, Phi, LRHSI, truth_tensor):
    
     save_model_weight = False
     if os.path.exists('Results/model_init_weights.pth'):
-        im_net[0].load_state_dict(torch.load('Results/model_init_weights.pth'))
+        ckpt = torch.load('Results/model_init_weights.pth')
+        try:
+            im_net[0].load_state_dict(ckpt)
+        except:
+            del ckpt['encoder0.0.1.weight']
+            del ckpt['skip0.0.1.weight']
+            del ckpt['recon_head.1.weight']
+            del ckpt['recon_head.1.bias']
+            im_net[0].load_state_dict(ckpt, strict=False)
         print('----------------------- Load inital model weights -----------------------')
         save_model_weight = False
         
