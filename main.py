@@ -25,6 +25,6 @@ if __name__ == '__main__':
             main_MSFA_CAVE(file_name)
     elif Real_exp:
         # 'real_data_25', 'real_data_16_S1', 'real_data_16_S2'
-        data_list = ['real_data_16_S2'] 
+        data_list = ['real_data_16_S1'] 
         for file_name in data_list:
             main_MSFA_Realdata(file_name)

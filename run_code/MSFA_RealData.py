@@ -31,7 +31,7 @@ def main_MSFA_Realdata(data_name):
         os.makedirs(result_dir)
 
     matfile = dataset_dir + data_name + '.mat'
-    h, w, nC = 1000, 1000, 25
+    h, w, nC = 1000, 1000, 16
     data = sio.loadmat(matfile)
 
     Phi = torch.from_numpy(data['SMP_seq']).float().to(device)
