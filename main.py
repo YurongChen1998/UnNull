@@ -19,8 +19,8 @@ if __name__ == '__main__':
     
     if MSFA:
         # 'CAVE_balloons' (3), 'CAVE_beads' (0.5), 'CAVE_cd' (0.1), 'CAVE_chart' (1), 'CAVE_clay' (1), 'CAVE_cloth' (5), 'CAVE_fake_bear' (1), 'CAVE_feathers' (1), 'CAVE_flowers' (3), 'CAVE_oil' （7）
-        # 'Harvard_S1' (3), 'CAVE_beads' (0.5), 'CAVE_cd' (0.1), 'CAVE_chart' (1), 'CAVE_clay' (1), 'CAVE_cloth' (5), 'CAVE_fake_bear' (1), 'CAVE_feathers' (1), 'CAVE_flowers' (3), 'CAVE_oil' （7）
-        data_list = ['Harvard_S1'] 
+        # 'Harvard_S1'（3）, 'Harvard_S2', 'Harvard_S3', 'Harvard_S4',  'Harvard_S5',  'Harvard_S6',  'Harvard_S7',  'Harvard_S8',  'Harvard_S9',  'Harvard_S10'
+        data_list = ['Harvard_S10'] 
         for file_name in data_list:
             main_MSFA_CAVE(file_name)
     elif Real_exp:
