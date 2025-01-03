@@ -31,10 +31,10 @@ def main_MSFA_Realdata(data_name):
         os.makedirs(result_dir)
 
     matfile = dataset_dir + data_name + '.mat'
-    h, w, nC = 1000, 1000, 16
     data = sio.loadmat(matfile)
-
     Phi = torch.from_numpy(data['SMP_seq']).float().to(device)
+    h, w, nC = Phi.shape
+    
     meas_ = torch.from_numpy(data['I_MOS_seq']).float().to(device) / 255
     meas = meas_
     LRHSI = meas_.unsqueeze(2).repeat(1, 1, nC)
