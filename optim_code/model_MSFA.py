@@ -71,7 +71,7 @@ def UnNull_MSFA(meas, Phi, LRHSI, truth_tensor):
 def UnNull_Real_MSFA(meas, Phi, LRHSI, truth_tensor):
     torch.backends.cudnn.benchmark = True
     _, _, B = Phi.shape
-    iter_num = 20
+    iter_num = 40
     best_loss = float('inf')
     loss_l1 = torch.nn.L1Loss().to(device)
     loss_l2 = torch.nn.MSELoss().to(device)
@@ -101,7 +101,7 @@ def UnNull_Real_MSFA(meas, Phi, LRHSI, truth_tensor):
         model_out = model_out + LRHSI
         pred_meas = A(model_out.squeeze(0).permute(1, 2, 0), Phi)
         loss = loss_l1(meas, pred_meas)
-        loss_tv = calculate_stv(model_out.squeeze(0).permute(1, 2, 0))
+        loss_tv = calculate_stv(model_out.squeeze(0).permute(1, 2, 0)) + calculate_tv(model_out.squeeze(0).permute(1, 2, 0))
         loss += 120*loss_tv
         
         optimizer.zero_grad() 
