@@ -58,14 +58,13 @@ def main_MSFA_CAVE(data_name):
     print('--------- LRHSI PSNR:', PSNR)
     print('                                                        ')
     
-    '''
-    Sparse_noise = np.random.choice((0, 1, 2), size=(meas.shape[0], meas.shape[1]), p=[0.99, 0.01/2., 0.01/2.])
-    Gauss_noise = np.random.normal(loc=0.5, scale=0.5, size=(meas.shape[0], meas.shape[1]))
-    meas = meas + 0.1*Gauss_noise
-    meas[Sparse_noise == 1] = torch.max(meas)
-    meas[Sparse_noise == 2] = 0
-    meas = meas.float()
-    '''
+    
+    #Sparse_noise = np.random.choice((0, 1, 2), size=(meas.shape[0], meas.shape[1]), p=[0.99, 0.01/2., 0.01/2.])
+    #Gauss_noise = np.random.normal(loc=0.5, scale=0.5, size=(meas.shape[0], meas.shape[1]))
+    #meas = meas + 0.1*torch.from_numpy(Gauss_noise).float().to(device)
+    #meas[Sparse_noise == 1] = torch.max(meas)
+    #meas[Sparse_noise == 2] = 0
+    #meas = meas.float()
 
 
     #------------------------- Training Model -------------------------#

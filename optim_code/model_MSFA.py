@@ -40,7 +40,7 @@ def UnNull_MSFA(meas, Phi, LRHSI, truth_tensor):
         net_out = im_net[0](LRHSI, Phi)
         model_out = net_out + LRHSI
         pred_meas = A(model_out.squeeze(0).permute(1, 2, 0), Phi)
-        loss = loss_l1(meas, pred_meas)
+        loss = loss_l1(meas, pred_meas) + loss_l2(meas, pred_meas)
         loss_tv = calculate_stv(model_out.squeeze(0).permute(1, 2, 0))
         loss += 3*loss_tv
         
