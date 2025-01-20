@@ -23,7 +23,7 @@ def UnNull_MSFA(meas, Phi, LRHSI, X_truth_tensor, Filter_matrix, truth_tensor):
     best_loss = float('inf')
     loss_l1 = torch.nn.L1Loss().to(device)
     loss_l2 = torch.nn.MSELoss().to(device)
-    im_net = low_rank_model_load(B)
+    im_net = model_load(B)
    
     save_model_weight = False
     if os.path.exists('Results/model_init_weights.pth'):
