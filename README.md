@@ -52,7 +52,7 @@ cd UnNull_Recon
 python main.py
 ```
 
-- ***Check Our Demosaicing Results***
+- ***Check Our Recontruction Results***
 ```
 cd UnNull_Recon/Results
 load 'Img' and 'img (reconstructed img)' variables
