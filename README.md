@@ -42,8 +42,8 @@ Each .mat file includes:
                         X (Spectral bands) [500x500x25]
                         y = A.*Img (Measurements) [500x500]
 
-Note: The A_matrix.mat file is needed, which include:
-                        F (Fileter response matrix) [25x500x500x31]
+Note: The A_matrix.mat file is needed, which includes:
+                        F (Response matrix) [25x500x500x31]
 ```
 
 
@@ -53,7 +53,7 @@ cd UnNull_Recon
 python main.py
 ```
 
-- ***Check Our Recontruction Results***
+- ***Check Our Reconstruction Results***
 ```
 cd UnNull_Recon/Results
 load 'Img' and 'img (reconstructed img)' variables
