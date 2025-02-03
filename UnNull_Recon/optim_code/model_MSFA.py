@@ -27,7 +27,7 @@ def UnNull_MSFA(meas, Phi, LRHSI, X_truth_tensor, Filter_matrix, truth_tensor):
    
     save_model_weight = False
     if os.path.exists('Results/model_init_weights.pth'):
-        ckpt = torch.load('Results/model_init_weights.pth')
+        ckpt = torch.load('Results/model_init_weights.pth', map_location=torch.device('cpu'))
         del ckpt['encoder0.0.1.weight']
         del ckpt['skip0.0.1.weight']
         del ckpt['recon_head.1.weight']
