@@ -1,6 +1,10 @@
 ## UnNull: Unsupervised Range-Nullspace Learning for Multispectral Demosaicing and Reconstruction
 [PDF file](https://github.com/YurongChen1998/UnNull/blob/main/Files/main.pdf), [Supplementary material file](https://github.com/YurongChen1998/UnNull/blob/main/Files/Supplementary%20Material%20of%20UnNull.pdf)
 
+- **The flowchart of the UnNull algorithm.**
+<div align=center><img width="1070" height="390" src="https://github.com/YurongChen1998/Prior-Image-Guided-Snapshot-Spectral-Compressive-Imaging/blob/main/img/Fig1.jpg"/></div>
+
+
 ## Multispectral demosaicing experiments
 
 - ***Demosaicing Experiments Data Preparation***
