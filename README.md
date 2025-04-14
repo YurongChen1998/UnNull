@@ -2,7 +2,7 @@
 [PDF file](https://github.com/YurongChen1998/UnNull/blob/main/Files/main.pdf), [Supplementary material file](https://github.com/YurongChen1998/UnNull/blob/main/Files/Supplementary%20Material%20of%20UnNull.pdf)
 
 - **The flowchart of the UnNull algorithm.**
-<div align=center><img width="970" height="340" src="https://github.com/YurongChen1998/UnNull/blob/main/Files/Flowchart.jpg"/></div>
+<div align=center><img width="970" height="320" src="https://github.com/YurongChen1998/UnNull/blob/main/Files/Flowchart.jpg"/></div>
 
 
 ## Multispectral demosaicing experiments
