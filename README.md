@@ -1,4 +1,5 @@
 ## UnNull: Unsupervised Range-Nullspace Learning for Multispectral Demosaicing and Reconstruction
+[PDF file](https://github.com/YurongChen1998/UnNull/blob/main/Files/main.pdf), [Supplementary material file](https://github.com/YurongChen1998/UnNull/blob/main/Files/Supplementary%20Material%20of%20UnNull.pdf)
 
 ## Multispectral demosaicing experiments
 
